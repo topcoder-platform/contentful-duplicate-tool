@@ -13,7 +13,7 @@ The contentful-duplicate cli allows users to duplicate entries in Contenful from
 
     `./bin/contentful-duplicate [--options]` (check `./bin/contentful-duplicate --help` for more details)
 
-    Run `npm link` in the root of your project will symlink your binary file to the system path, making it accessible from anywhere by running `contentful-duplicate` [Optional]
+    **Run `npm link` in the root of your project will symlink your binary file to the system path, making it accessible from anywhere by running `contentful-duplicate` [Optional]**
 
 3. Run linters 
     `npm run lint`
