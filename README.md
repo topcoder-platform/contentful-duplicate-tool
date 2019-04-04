@@ -3,7 +3,7 @@ The contentful-duplicate cli allows users to duplicate entries in Contenful from
 
 # Deployment and Execution
 1.  Prerequisites:
-    - NodeJS 11.5.0 (other recent versions should also work fine);
+    - NodeJS 10.15.3 (other recent versions should also work fine);
     - Contentful account (https://www.contentful.com/)
     - Create an access token to access Contentful Management API https://www.contentful.com/developers/docs/references/content-management-api/#/introduction/authentication
      
@@ -38,6 +38,8 @@ contentful-duplicate  [--version] [--help]
 + --space-id
 + --mToken
 + --entries
+
+**Refer to [Contentful duplicate - Help](docs/contentful-duplicate.md) Guide for some examples**
 
 ## Flag Options
 |Flag                     |Description|
