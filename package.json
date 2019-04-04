@@ -1,0 +1,24 @@
+{
+  "name": "contentful-duplicate",
+  "version": "1.0.0",
+  "license": "MIT",
+  "bin": {
+    "outside": "bin/contentful-duplicate"
+  },
+  "scripts": {
+    "lint": "eslint --ext .js ."
+  },
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "contentful": "^7.5.0",
+    "contentful-cli": "^0.26.1",
+    "contentful-management": "^5.7.0",
+    "minimist": "^1.2.0",
+    "ora": "^3.2.0"
+  }
+}
