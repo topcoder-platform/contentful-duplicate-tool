@@ -9,7 +9,9 @@ The contentful-duplicate cli allows users to duplicate entries in Contenful from
      
 2. Execution
 
-    `npm install`
+    `git clone https://github.com/topcoder-platform/contentful-duplicate-tool.git`
+
+    `cd contentful-duplicate-tool && npm install`
 
     `./bin/contentful-duplicate [--options]` (check `./bin/contentful-duplicate --help` for more details)
 
