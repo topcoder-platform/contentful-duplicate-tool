@@ -64,7 +64,7 @@ const duplicateEntries = async (
 
   // if the target environment have enough needed content types, then duplicate entries
   if (unexistedContentTypes.length === 0) {
-    spinner.info(`Start duplcate entries : [${entries}]`);
+    spinner.info(`Start duplicate entries : [${entries}]`);
 
     entries.forEach((entryId) => {
       duplicateEntry(entryId, sourceEnv, publish, exclude, singleLevel, targetEnv,
