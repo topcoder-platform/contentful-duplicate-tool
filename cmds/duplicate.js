@@ -69,8 +69,8 @@ const duplicateEntries = async (
     entries.forEach((entryId) => {
       duplicateEntry(entryId, sourceEnv, publish, exclude, singleLevel, targetEnv,
         prefix, suffix, regex, replaceStr, targetContentTypes).then((entry) => {
-        const entryNameObj = entry.fields.name;
-        const firstKeyName = Object.keys(entry.fields.name)[0];
+        const entryNameObj = entry.fields[constants.FIELD_NAME];
+        const firstKeyName = Object.keys(entry.fields[constants.FIELD_NAME])[0];
 
         spinner.info(`Duplicate entry ${entryId} successfully. New entry #${entry.sys.id} - ${entryNameObj[firstKeyName]}`);
       });
