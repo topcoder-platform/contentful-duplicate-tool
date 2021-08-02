@@ -55,11 +55,13 @@ const duplicateEntry = async (
         for (const fieldContentKey of Object.keys(fieldContent)) {
           const fieldContentValue = fieldContent[fieldContentKey];
 
+          // Handle Reference field with "Many references"
           if (!isSingleLevel && Array.isArray(fieldContentValue)) {
             for (const [contentIndex, content] of fieldContentValue.entries()) {
-              if (content.sys.type === constants.LINK_TYPE
-                && content.sys.linkType === constants.ENTRY_TYPE
-                && !exclude.includes(content.sys.id)) {
+              if (content.sys
+                    && content.sys.type === constants.LINK_TYPE
+                    && content.sys.linkType === constants.ENTRY_TYPE
+                    && !exclude.includes(content.sys.id)) {
                 spinner.info(`Duplicating sub entry #${content.sys.id}`);
 
                 const duplicatedEntry = await duplicateEntry(
@@ -68,6 +70,21 @@ const duplicateEntry = async (
                 );
                 fieldContentValue[contentIndex].sys.id = duplicatedEntry.sys.id;
               }
+            }
+          // Handle Reference field with "One reference"
+          } else if (!isSingleLevel && fieldContentValue.sys) {
+            const content = fieldContentValue;
+            if (content.sys
+                  && content.sys.type === constants.LINK_TYPE
+                  && content.sys.linkType === constants.ENTRY_TYPE
+                  && !exclude.includes(content.sys.id)) {
+              spinner.info(`Duplicating sub entry #${content.sys.id}`);
+
+              const duplicatedEntry = await duplicateEntry(
+                content.sys.id, environment, publish, exclude, isSingleLevel, targetEnvironment,
+                prefix, suffix, regex, replaceStr, targetContentTypes,
+              );
+              fieldContentValue.sys.id = duplicatedEntry.sys.id;
             }
           }
 
