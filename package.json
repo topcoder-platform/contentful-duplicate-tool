@@ -14,7 +14,7 @@
     "eslint-plugin-import": "^2.16.0"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.24.0",
     "contentful": "^7.5.0",
     "contentful-cli": "^0.26.1",
     "contentful-management": "^5.7.0",
