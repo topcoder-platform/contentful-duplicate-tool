@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "contentful": "^7.5.0",
+    "contentful": "^7.14.7",
     "contentful-cli": "^0.26.1",
     "contentful-management": "^5.7.0",
     "minimist": "^1.2.0",
